@@ -1,0 +1,8 @@
+services:
+  java8:
+    image: openjdk:8-jdk-alpine
+    container_name: java8-compiler
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: tail -f /dev/null
