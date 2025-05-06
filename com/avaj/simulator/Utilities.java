@@ -1,4 +1,4 @@
-package com.avaj.utilities;
+package com.avaj.simulator;
 
 public class Utilities {
 
