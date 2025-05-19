@@ -1,6 +1,8 @@
-# Makefile for Java 8 Docker compilation
+# Run your simulator specifically (shortcut command)
+simulator: compile
+	@docker exec -it java8-compiler java com.avaj.simulator.Simulator scenario.txt
 
-.PHONY: all clean compile run start stop view-output
+.PHONY: all clean compile run start stop view-output run-app
 
 # Default target
 all: compile
@@ -20,16 +22,3 @@ clean:
 # Compile all Java files
 compile: start
 	docker exec -it java8-compiler sh -c "find * -name \"*.java\" > sources.txt && javac @sources.txt"
-	@echo "Compilation complete!"
-
-# Run a specific class (usage: make run CLASS=YourClassName)
-run: start
-	@if [ -z "$(CLASS)" ]; then \
-		echo "Error: Please specify a class name with CLASS=YourClassName"; \
-		exit 1; \
-	fi
-	docker exec -it java8-compiler java $(CLASS)
-
-# View simulation output file
-view: start
-	@docker exec -it java8-compiler sh -c "if [ -f simulation.txt ]; then cat simulation.txt; else echo 'Error: simulation.txt not found'; fi"
