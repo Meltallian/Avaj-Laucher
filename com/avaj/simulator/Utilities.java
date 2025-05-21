@@ -43,7 +43,7 @@ public class Utilities {
 			"(360|3[0-5][0-9]|[1-2][0-9][0-9]|[1-9][0-9]|[0-9])\\s" +  // 0-360
 			"(180|1[0-7][0-9]|[1-9][0-9]|[0-9])\\s" +                 // 0-180
 			"(100|[1-9][0-9]|[0-9])$",                               // 0-100
-			Pattern.COMMENTS);
+			Pattern.COMMENTS);		//ignores whitespace in the pattern except \\s
 		for (int i = 1; i < lines.size(); i++) {
 			String line = lines.get(i);
 			Matcher matcher = pattern.matcher(line);
