@@ -52,8 +52,7 @@ public class WeatherProvider {
 			return weather[0]; //[placeholder]
 			// return weather[weathermap[p_coordinates.getLongitude()][p_coordinates.getLatitude()][p_coordinates.getHeight()]];
 		} catch (Exception e) {
-			Utilities.pf("Error: " + e.getClass().getSimpleName());
-			e.printStackTrace();
+			Utilities.pf("Error: " + e.getMessage());
 			return weather[0];			
 		}
 	}

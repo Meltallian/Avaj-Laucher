@@ -26,8 +26,7 @@ public class Simulator {
 		try {
 			WeatherProvider seg = WeatherProvider.getInstance();		
 		} catch (Exception e) {
-			Utilities.pf("Error: " + e.getClass().getSimpleName());
-			e.printStackTrace();
+			Utilities.pf("Error: " + e.getMessage());
 		}
 	}
 }
