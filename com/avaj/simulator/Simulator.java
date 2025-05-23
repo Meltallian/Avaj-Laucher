@@ -1,6 +1,7 @@
 package com.avaj.simulator;
 
 import com.avaj.simulator.Utilities;
+import com.avaj.simulator.tower.WeatherProvider;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -20,7 +21,13 @@ public class Simulator {
 				return;
 			}
 		} catch (IOException e) {
-			System.out.println("Error reading file: " + e.getMessage());
+			Utilities.pf("Error reading file: " + e.getMessage());
+		}
+		try {
+			WeatherProvider seg = WeatherProvider.getInstance();		
+		} catch (Exception e) {
+			Utilities.pf("Error: " + e.getClass().getSimpleName());
+			e.printStackTrace();
 		}
 	}
 }

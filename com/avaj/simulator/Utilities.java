@@ -19,7 +19,7 @@ public class Utilities {
 		}
 	}
 
-	public static void	pl(String str) {
+	public static void	pf(String str) {
 		if (!str.isEmpty()) {
 			System.out.println(str);
 		}
@@ -30,11 +30,11 @@ public class Utilities {
 
 	public static boolean	scenarioParse(List<String> lines){
 		if (lines.isEmpty()) {
-			pl("Parsing error: empty scenario file.");
+			pf("Parsing error: empty scenario file.");
 			return false;
 		}
 		if (!isInt(lines.get(0))) {
-			pl("Parsing error: first line must be an simple Integer. ");
+			pf("Parsing error: first line must be an simple Integer. ");
 			return false;
 		}
 		Pattern pattern = Pattern.compile(
@@ -48,7 +48,7 @@ public class Utilities {
 			String line = lines.get(i);
 			Matcher matcher = pattern.matcher(line);
 			if (!matcher.find()) {
-				pl("Error: scenario.txt not valid");
+				pf("Error: scenario.txt not valid");
 				return false;
 			}
 		}

@@ -1,5 +1,11 @@
 package com.avaj.simulator.tower;
 
-public class WeatherTower {
-	
+import com.avaj.simulator.tower.Tower;
+import com.avaj.simulator.aircraft.Coordinates;
+
+public class WeatherTower extends Tower {
+	public String getWeather(Coordinates p_coordinates) {
+		String weather = "RAIN";
+		return weather;
+	}
 }

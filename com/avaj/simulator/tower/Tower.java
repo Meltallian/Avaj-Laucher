@@ -23,6 +23,6 @@ public class Tower {
 	}
 
 	protected void	conditionChanged() {
-
+		// TODO
 	}
 }
