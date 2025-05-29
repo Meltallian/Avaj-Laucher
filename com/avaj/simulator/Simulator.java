@@ -2,6 +2,7 @@ package com.avaj.simulator;
 
 import com.avaj.simulator.Utilities;
 import com.avaj.simulator.tower.WeatherProvider;
+import com.avaj.simulator.tower.WeatherTower;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -24,7 +25,9 @@ public class Simulator {
 			Utilities.pf("Error reading file: " + e.getMessage());
 		}
 		try {
-			WeatherProvider seg = WeatherProvider.getInstance();		
+			WeatherProvider seg = WeatherProvider.getInstance();
+			WeatherTower wt = new WeatherTower();
+			// wt.register();	
 		} catch (Exception e) {
 			Utilities.pf("Error: " + e.getMessage());
 		}

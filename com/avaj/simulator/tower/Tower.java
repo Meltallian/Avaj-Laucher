@@ -10,9 +10,6 @@ public class Tower {
 	public Tower() {
 		this.observers = new ArrayList<Flyable>();
 	}
-	// public Tower(List<Flyable> flyables) {
-	// 	this.observers = new ArrayList<>(flyables);
-	// }
 
 	public void	register(Flyable p_flyable) {
 		observers.add(p_flyable);
@@ -23,6 +20,9 @@ public class Tower {
 	}
 
 	protected void	conditionChanged() {
-		// TODO
+		for (Flyable observer : observers) {
+			// uncomment once done in Flyable
+			// observer.updateConditions();
+		}
 	}
 }
